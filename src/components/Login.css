@@ -1,0 +1,53 @@
+.divPpal{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.fondoLogin{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    
+  
+}
+.login{
+    background-color: white;
+    width: 20vw;
+    padding: 60px;
+    border-radius: 20px;
+    
+}
+.welcome{
+    margin-left: 7vw;
+    font-size: 30px;
+    font-family: fantasy;
+}
+
+.imagenesRrs{
+    width: 30px;
+    margin: 0px;
+    margin-left: 20px;
+}
+.boton{
+   background-image: url(https://images.unsplash.com/photo-1564951434112-64d74cc2a2d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80);
+    margin: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 15vw;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    
+}
+input {
+    
+    border:none;
+    border-style: inset;
+    border-bottom:1px solid #fff;
+}
