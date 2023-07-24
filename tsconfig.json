@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "allowImportingTsExtensions": true, // Habilita el uso de extensiones .ts en las importaciones
+    "baseUrl": "./src", // Ruta base para las importaciones relativas
+    "outDir": "./dist", // Carpeta de salida para los archivos transpilados
+    "rootDir": "./src" // Carpeta raíz de los archivos fuente
+  },
+  "include": ["src/**/*.ts", "src/context/AppContext.jsx"], // Rutas de los archivos fuente a incluir en la compilación
+  "exclude": ["node_modules"] // Rutas de las carpetas o archivos a excluir de la compilación
+}

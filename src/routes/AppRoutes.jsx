@@ -1,17 +1,22 @@
-import React from 'react'
-import { Login } from '../components/Login';
-import { Container } from "react-bootstrap";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+// DEPENDENCIES
+import React, { useContext } from 'react'
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+// COMPONENTS
+import { Login } from '../views/Login/Login';
+import { Home } from '../views/Home/Home';
+// CONTEXT
+import { AppContext } from '../context/AppContext';
 
 
 export const AppRoutes = () => {
+  const { isLogged } = useContext(AppContext);
   return (
-    <Container fluid>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Login />} />
-        </Routes>
-      </BrowserRouter>
-    </Container>
+    <BrowserRouter>
+      <Routes>
+        {!isLogged && <Route path='/' element={<Login />} />}
+        {isLogged && <Route path='/home' element={<Home />} />}
+        {/* <Route path="*" element={<Navigate to="/" />} /> */}
+      </Routes>
+    </BrowserRouter>
   );
 }
