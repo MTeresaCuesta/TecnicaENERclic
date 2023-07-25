@@ -1,7 +1,6 @@
 // DEPENDENCIES
-import React from "react";
 // COMPONENTS
-import { BarChart } from "../../components/BarChart/BarChart";
+import BarChart from "../../components/BarChart/BarChart";
 // STYLES
 import "./Home.css";
 

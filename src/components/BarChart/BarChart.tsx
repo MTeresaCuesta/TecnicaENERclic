@@ -1,11 +1,9 @@
+import { useEffect, useRef } from "react";
+import Chart from "chart.js/auto";
 
-import React, { useEffect, useRef } from 'react';
-import Chart from 'chart.js/auto';
-
-
-const labels = ["January", "February", "March", "April", "May", "June", "July"];
-const minNumber = -1000;
-const maxNumber = 1000;
+const labels: string[] = ["January", "February", "March", "April", "May", "June", "July"];
+const minNumber: number = -1000;
+const maxNumber: number = 1000;
 
 const data = {
   labels,
@@ -14,7 +12,7 @@ const data = {
       label: "Dataset 1",
       data: labels.map(() => {
         // Generate a random number between minNumber and maxNumber
-        const randomNumber = Math.random() * (maxNumber - minNumber) + minNumber;
+        const randomNumber: number = Math.random() * (maxNumber - minNumber) + minNumber;
         return randomNumber;
       }),
       borderColor: "rgb(255, 99, 132)",
@@ -24,7 +22,7 @@ const data = {
       label: "Dataset 2",
       data: labels.map(() => {
         // Generate a random number between minNumber and maxNumber
-        const randomNumber = Math.random() * (maxNumber - minNumber) + minNumber;
+        const randomNumber: number = Math.random() * (maxNumber - minNumber) + minNumber;
         return randomNumber;
       }),
       borderColor: "rgb(53, 162, 235)",
@@ -52,7 +50,7 @@ const options = {
   },
   scales: {
     x: {
-      type: 'category', // Use 'category' scale for x-axis
+      type: "category", // Use 'category' scale for x-axis
     },
     y: {
       // Define other scales for the y-axis if needed
@@ -60,19 +58,19 @@ const options = {
   },
 };
 
-export const BarChart = () => {
-  const chartRef = useRef(null);
+const BarChart: React.FC = () => {
+  const chartRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
     // Chart.js configuration
     const chartConfig = {
-      type: 'bar',
+      type: "bar",
       data,
       options,
     };
 
     // Create the Chart.js chart instance
-    const myChart = new Chart(chartRef.current, chartConfig);
+    const myChart = new Chart(chartRef.current!, chartConfig);
 
     // Clean up when component unmounts
     return () => {
@@ -83,3 +81,4 @@ export const BarChart = () => {
   return <canvas ref={chartRef} />;
 };
 
+export default BarChart;

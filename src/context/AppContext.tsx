@@ -1,17 +1,17 @@
 // DEPENDENCIES
 import React, { createContext, useEffect, useState } from "react";
 
-// interface AppContextProps {
-//   isLogged: boolean;
-//   setIsLogged: React.Dispatch<React.SetStateAction<boolean>>;
-// }
+interface AppContextProps {
+  isLogged: boolean;
+  setIsLogged: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-export const AppContext = createContext({
+export const AppContext = createContext<AppContextProps>({
   isLogged: false,
-  setIsLogged: () => { },
+  setIsLogged: (isLogged) => isLogged,
 });
 
-export function AppContextProvider({ children }) {
+export function AppContextProvider({ children }: { children: React.ReactNode }) {
   const [isLogged, setIsLogged] = useState(false);
 
   useEffect(() => {
