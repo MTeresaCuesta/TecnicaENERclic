@@ -1,5 +1,5 @@
 .divPpal{
-    display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -15,11 +15,22 @@
     
   
 }
+.iconoNegroUsuario{
+    display: flex;
+    justify-content: center;  
+    align-items: center;  
+    width: 8%;
+    margin-bottom: 68vh;
+    position: absolute;
+    
+   
+}
 .login{
-    background-color: white;
+    background-color: #ffb7a880;
     width: 20vw;
     padding: 60px;
     border-radius: 20px;
+    border: 2px solid rgba(32, 119, 173, 0.487); 
     
 }
 .welcome{
@@ -27,27 +38,48 @@
     font-size: 30px;
     font-family: fantasy;
 }
-
+.campos{
+    margin: 30px;
+    margin-left: 5vw;
+    margin-bottom: 40px;
+}
+.boton{
+    margin-left: 3vw !important;
+}
 .imagenesRrs{
-    width: 30px;
+    width: 40px;
     margin: 0px;
     margin-left: 20px;
 }
-.boton{
-   background-image: url(https://images.unsplash.com/photo-1564951434112-64d74cc2a2d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80);
-    margin: 30px;
-    padding: 10px;
-    border-radius: 10px;
-    width: 15vw;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    
+.msgError{
+    margin-left: 16px;
 }
-input {
-    
-    border:none;
-    border-style: inset;
-    border-bottom:1px solid #fff;
+
+
+/* -------RESPONSIVE VISTA MOVIL (IPHONE 12)------- */
+
+@media (max-width:390px){
+
+   
+
+    .iconoNegroUsuario{
+        display: flex;
+        justify-content: center;  
+        align-items: center;  
+        width: 30%;
+        margin-bottom: 75vh;
+        position: absolute;
+        
+       
+    }
+    .login{
+        background-color: #ffb7a880;
+        width: 40vw;
+        padding: 60px;
+        border-radius: 20px;
+        border: 2px solid rgba(32, 119, 173, 0.487); 
+        
+    }
+
 }
+
