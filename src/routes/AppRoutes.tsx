@@ -19,11 +19,10 @@ export const AppRoutes = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {isLogged && <Route path="/" element={<Login />} />}
+        <Route path="/" element={<Login />} />
         {isLogged && <Route path="/home" element={<Home />} />}
         <Route element={<RedirectToHome />} />
       </Routes>
     </BrowserRouter>
-     
   );
 };

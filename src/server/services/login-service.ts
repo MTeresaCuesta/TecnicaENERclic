@@ -13,5 +13,7 @@ export const loginService = async (username: string, password: string) => {
     .then((json) => {
       return json;
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      throw err;
+    });
 };

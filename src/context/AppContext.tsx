@@ -4,15 +4,20 @@ import React, { createContext, useEffect, useState } from "react";
 interface AppContextProps {
   isLogged: boolean;
   setIsLogged: React.Dispatch<React.SetStateAction<boolean>>;
+  graphics: object[];
+  setGraphics: React.Dispatch<React.SetStateAction<object[]>>;
 }
 
 export const AppContext = createContext<AppContextProps>({
   isLogged: false,
   setIsLogged: (isLogged) => isLogged,
+  graphics: [],
+  setGraphics: (graphics) => graphics,
 });
 
 export function AppContextProvider({ children }: { children: React.ReactNode }) {
   const [isLogged, setIsLogged] = useState(false);
+  const [graphics, setGraphics] = useState([]);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -21,5 +26,5 @@ export function AppContextProvider({ children }: { children: React.ReactNode }) 
     }
   }, []);
 
-  return <AppContext.Provider value={{ isLogged, setIsLogged }}>{children}</AppContext.Provider>;
+  return <AppContext.Provider value={{ isLogged, setIsLogged, graphics, setGraphics }}>{children}</AppContext.Provider>;
 }
