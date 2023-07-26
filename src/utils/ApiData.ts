@@ -4,6 +4,7 @@ export const categories: any = [
     widge: [
       {
         name: "balance-electrico",
+        
       },
     ],
   },

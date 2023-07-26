@@ -1,85 +1,97 @@
-.divPpal{
+.divPpal {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
 }
-.fondoLogin{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    
-  
+.fondoLogin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
-.iconoNegroUsuario{
-    display: flex;
-    justify-content: center;  
-    align-items: center;  
-    width: 8%;
-    margin-bottom: 68vh;
-    position: absolute;
-    
-   
+.iconoNegroUsuario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 8%;
+  margin-bottom: 68vh;
+  position: absolute;
 }
-.login{
-    background-color: #ffb7a880;
-    width: 20vw;
-    padding: 60px;
-    border-radius: 20px;
-    border: 2px solid rgba(32, 119, 173, 0.487); 
-    
+.login {
+  background-color: #a8c1d694;
+  width: 20vw;
+  padding: 60px;
+  border-radius: 20px;
+  border: 2px solid rgba(57, 95, 191, 0.487);
 }
-.welcome{
-    margin-left: 7vw;
-    font-size: 30px;
-    font-family: fantasy;
+.welcome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: fantasy;
+  font-size: 30px;
 }
-.campos{
-    margin: 30px;
-    margin-left: 5vw;
-    margin-bottom: 40px;
+.campos {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  display: grid;
+  place-items: center;
 }
-.boton{
-    margin-left: 3vw !important;
+.boton {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  display: grid;
+  place-items: center;
 }
-.imagenesRrs{
-    width: 40px;
-    margin: 0px;
-    margin-left: 20px;
-}
-.msgError{
-    margin-left: 16px;
-}
+.OrSignUpUsing {
+  align-items: center;
+  justify-content: center;
 
+  display: grid;
+  place-items: center;
+}
+.imagenesRrs {
+  width: 40px;
+  margin: 0px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+.msgError {
+  margin-left: 16px;
+}
 
 /* -------RESPONSIVE VISTA MOVIL (IPHONE 12)------- */
 
-@media (max-width:390px){
-
-   
-
-    .iconoNegroUsuario{
-        display: flex;
-        justify-content: center;  
-        align-items: center;  
-        width: 30%;
-        margin-bottom: 75vh;
-        position: absolute;
-        
-       
-    }
-    .login{
-        background-color: #ffb7a880;
-        width: 40vw;
-        padding: 60px;
-        border-radius: 20px;
-        border: 2px solid rgba(32, 119, 173, 0.487); 
-        
-    }
-
+@media (max-width: 390px) {
+  .iconoNegroUsuario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    margin-bottom: 68vh;
+    position: absolute;
+  }
+  .login {
+    background-color: #ffb7a880;
+    width: 40vw;
+    padding: 60px;
+    border-radius: 20px;
+    border: 2px solid rgba(32, 119, 173, 0.487);
+  }
+  .imagenesRrs {
+    width: 28px;
+    margin: 0px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
+  }
 }
-

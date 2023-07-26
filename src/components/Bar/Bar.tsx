@@ -1,5 +1,5 @@
 // DEPENDENCIES
-import { Bar } from "react-chartjs-2";
+import { Bar, Line } from "react-chartjs-2";
 // UTILS
 import { getDayUtil } from "../../utils/dateUtils";
 
@@ -32,6 +32,9 @@ const BarComponent = ({ graphic }: any) => {
     labels = graphic.attributes.content[0].attributes.values.map((e: any) => getDayUtil(e.datetime));
   }
 
+
+  const randomColors = ["#FF5733", "#3399FF", "#FF33FF", "#33FF99", "#FFFF33", "#9933FF", "#33FFFF"];
+
   let superdato: any = {};
   let prueba = [];
   if (type === 1) {
@@ -40,7 +43,7 @@ const BarComponent = ({ graphic }: any) => {
       return {
         label: superdato[index].title,
         data: e.values.map((e: any) => e.value),
-        backgroundColor: "rgb(255, 99, 132)",
+        backgroundColor: randomColors[index % randomColors.length],
       };
     });
   }
@@ -51,6 +54,7 @@ const BarComponent = ({ graphic }: any) => {
   };
 
   return <Bar data={data} options={options} />;
+
 };
 
 export default BarComponent;

@@ -66,7 +66,7 @@ export function Login() {
 
           {error && <p className="msgError">{error}</p>}
         </div>
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+        <div className="OrSignUpUsing">
           <p>Or Sign Up Using</p>
           <div style={{ marginTop: "60px" }}>
             <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
