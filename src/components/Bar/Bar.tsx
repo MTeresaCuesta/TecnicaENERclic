@@ -1,15 +1,16 @@
-// DEPENDENCIES
 import { Bar } from "react-chartjs-2";
-// UTILS
 import { getDayUtil } from "../../utils/dateUtils";
 
+// Definimos la interfaz para las propiedades que recibirá el componente BarComponent
 interface BarComponentProps {
   graphic: any;
 }
 
 const BarComponent = ({ graphic }: BarComponentProps) => {
   let title = "";
-  let type = 0;
+  let type = 0; // Variable para identificar el tipo de gráfico (1 para gráfico con atributos "content", 2 para gráfico con atributos "values")
+
+  // Comprobamos el tipo de gráfico y asignamos el título en consecuencia
   if (graphic.attributes.content) {
     type = 1;
     title = graphic.attributes.title;
@@ -18,30 +19,22 @@ const BarComponent = ({ graphic }: BarComponentProps) => {
     title = graphic.attributes.title;
   }
 
+  // Configuración de opciones para el gráfico
   const options: any = {
     responsive: true,
     plugins: {
-      legend: {
-        position: "top",
-      },
-      title: {
-        display: true,
-        text: title,
-      },
+      legend: { position: "top" },
+      title: { display: true, text: title },
     },
   };
 
-  // Save the labels
-  let labels = [];
-  if (type === 1) {
-    labels = graphic.attributes.content[0].attributes.values.map((e: any) => getDayUtil(e.datetime));
-  } else if (type === 2) {
-    labels = graphic.attributes.values.map((value: any) => getDayUtil(value.datetime));
-  }
+  // Guardamos las etiquetas (labels) para el eje X del gráfico
+  let labels = type === 1 ? graphic.attributes.content[0].attributes.values.map((e: any) => getDayUtil(e.datetime)) : graphic.attributes.values.map((value: any) => getDayUtil(value.datetime));
+
 
   const randomColors = ["#FF5733", "#3399FF", "#FF33FF", "#33FF99", "#FFFF33", "#9933FF", "#33FFFF"];
 
-  // Save the dataset
+  // Guardamos los datasets del gráfico
   let dataset = [];
   if (type === 1) {
     const datas = graphic.attributes.content.map((e: any) => e.attributes);
@@ -53,20 +46,12 @@ const BarComponent = ({ graphic }: BarComponentProps) => {
       };
     });
   } else if (type === 2) {
-    dataset = [
-      {
-        label: graphic.attributes.title,
-        data: graphic.attributes.values.map((e) => e.value),
-        backgroundColor: randomColors[Math.floor(Math.random() * randomColors.length)],
-      },
-    ];
+    dataset = [{ label: graphic.attributes.title, data: graphic.attributes.values.map((e) => e.value), backgroundColor: randomColors[Math.floor(Math.random() * randomColors.length)] }];
   }
 
-  const data = {
-    labels,
-    datasets: [...dataset],
-  };
+  const data = { labels, datasets: [...dataset] };
 
+  // Devolvemos el componente de gráfico de barras con los datos y opciones
   return <Bar data={data} options={options} />;
 };
 
