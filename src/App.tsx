@@ -1,6 +1,9 @@
+// COMPONENTS
 import { AppRoutes } from "./routes/AppRoutes";
-import { Container } from "@mui/material";
+// CONTEXT
 import { AppContextProvider } from "./context/AppContext";
+// MATERIAL UI
+import { Container } from "@mui/material";
 
 function App() {
   return (

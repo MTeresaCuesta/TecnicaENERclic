@@ -66,7 +66,8 @@
   margin-left: 10px;
 }
 .msgError {
-  margin-left: 16px;
+  text-align: center;
+  color: rgb(177, 21, 21);
 }
 
 /* -------RESPONSIVE VISTA MOVIL (IPHONE 12)------- */
@@ -76,12 +77,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30%;
-    margin-bottom: 68vh;
+    width: 24%;
+    margin-bottom: 70vh;
     position: absolute;
   }
   .login {
-    background-color: #ffb7a880;
+    
     width: 40vw;
     padding: 60px;
     border-radius: 20px;

@@ -1,15 +1,16 @@
 // DEPENDENCIES
-import { useContext, useState } from "react";
-import { Button, TextField } from "@mui/material";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 // CONTEXT
 import { AppContext } from "../../context/AppContext";
 // HANDLERS
 import { loginHandler } from "../../server/handlers/login-handlers";
+// MATERIAL UI
+import { Button, TextField } from "@mui/material";
 // STYLES
 import "./Login.css";
 
-export function Login() {
+export const Login = () => {
   const { setIsLogged } = useContext(AppContext);
   const navigate = useNavigate();
   const [error, setError] = useState("");
@@ -18,7 +19,7 @@ export function Login() {
     password: "",
   });
 
-  const handleChange = (event: any) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setState((prevState) => ({
       ...prevState,
       [event.target.name]: event.target.value,
@@ -34,7 +35,7 @@ export function Login() {
           navigate("/home");
         })
         .catch((err) => {
-          setError(err.message);
+          setError(err);
         });
     } else {
       setError("Please fill in all the fields");
@@ -48,13 +49,21 @@ export function Login() {
       <div className="login">
         <h2 className="welcome">WELCOME</h2>
         <div className="campos">
-          <TextField name="username" label="Username:" variant="standard" onChange={handleChange} />
           <TextField
-            type="password" // Esta línea define el tipo de campo como contraseña
+            name="username"
+            label="Username:"
+            variant="standard"
+            onChange={handleChange}
+            placeholder="mor_2314"
+            value={state.username}
+          />
+          <TextField
+            type="password"
             name="password"
             label="Your password:"
             variant="standard"
             onChange={handleChange}
+            placeholder="83r5^_"
             value={state.password}
           />
           <br />
@@ -86,4 +95,4 @@ export function Login() {
       </div>
     </div>
   );
-}
+};

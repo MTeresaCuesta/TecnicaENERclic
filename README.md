@@ -1,27 +1,30 @@
-# React + TypeScript + Vite
+# Prueba Técnica de Teresa
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![alt text](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*ucL7YQ2v8aaOy426soLPZA.png)
 
-Currently, two official plugins are available:
+DEFINICION
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Para la realización de este proyecto he utilizado para montar el proyecto Vite, React, Context-API, TypeScript....
 
-## Expanding the ESLint configuration
+Decidí usar Vite, por su velocidad y ligereza. Es una de las opciones recomendadas por la Documentación Oficial de React.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+FUNCIONAMIENTO
 
-- Configure the top-level `parserOptions` property like this:
+Esta prueba está desarrollada en React con Vite, por lo que para la instalación de dependencias es necesario tener Node y Vite. Una vez instalados ambos, desde la raíz del proyecto ejecuta "npm install" para instalar todas las dependencias necesarias.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+LOGIN
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Para iniciar sesión en necesario poner en el nombre de usuario:"mor*2314" y en la contraseña: "83r5^\_*", como indicamos en el Login.tsx.
+
+ARRANCAR EN LOCAL
+
+Para ejecutar el proyecto en el puerto 3000 es necesario ir a la raíz del proyecto y ejecutar "npm start". Si vas a localhost:3000, Verás la aplicación.
+
+CAPTURAS DE PANTALLA
+
+![alt text](./public/assets/images/Captura.png)
+![alt text](./public/assets/images/Captura_img_responsive_login_iphone12.png)
+![alt text](./public/assets/images/capturaForm_pc.png)
+![alt text](./public/assets/images/Form_vista_iphone12.png)
+![alt text](./public/assets/images/lineas.png)
+![alt text](./public/assets/images/Barras.png)

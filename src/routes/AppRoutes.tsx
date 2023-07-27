@@ -4,13 +4,12 @@ import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 // COMPONENTS
 import { Login } from "../views/Login/Login";
 import { Home } from "../views/Home/Home";
-
 // CONTEXT
 import { AppContext } from "../context/AppContext";
 
-const RedirectToHome = () => {
+const RedirectToLogin = () => {
   const navigate = useNavigate();
-  navigate("/home");
+  navigate("/");
   return null;
 };
 
@@ -21,7 +20,7 @@ export const AppRoutes = () => {
       <Routes>
         <Route path="/" element={<Login />} />
         {isLogged && <Route path="/home" element={<Home />} />}
-        <Route element={<RedirectToHome />} />
+        <Route element={<RedirectToLogin />} />
       </Routes>
     </BrowserRouter>
   );
